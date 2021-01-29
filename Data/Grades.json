@@ -1,0 +1,22 @@
+[
+    {   
+        "id": 1,
+        "name": "10th Kup",
+        "altName": "White Belt"
+    },
+    {   
+        "id": 2,
+        "name": "9th Kup",
+        "altName": "Yellow Tag"
+    },
+    {   
+        "id": 3,
+        "name": "8th Kup",
+        "altName": "Yellow Belt"
+    },
+    {   
+        "id": 4,
+        "name": "7th Kup",
+        "altName": "Green Tag"
+    }
+]
