@@ -2,18 +2,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RazorPageApp.Repositories;
-using RazorPageApp.Repositories.Interfaces;
-using RazorPageApp.Services;
-using RazorPageApp.Services.Interfaces;
+using Code.Data;
+using Code.Services;
 
-namespace RazorPageApp
+namespace Code
 {
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(options => 
+            {
+                options.RootDirectory = "/Code/Pages";
+            });
 
             services.AddScoped<IJsonFileHelper, JsonFileHelper>();
             services.AddScoped<IGradeRepository, GradeRepository>();

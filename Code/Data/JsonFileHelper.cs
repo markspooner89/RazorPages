@@ -1,9 +1,13 @@
 using System.IO;
 using System.Text.Json;
-using RazorPageApp.Repositories.Interfaces;
 
-namespace RazorPageApp.Repositories
+namespace Code.Data
 {
+    public interface IJsonFileHelper
+    {
+        T Get<T>(string filePath);
+    }
+    
     public class JsonFileHelper : IJsonFileHelper
     {
         public T Get<T>(string filePath)

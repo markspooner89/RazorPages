@@ -1,9 +1,13 @@
 using System;
 using Microsoft.Extensions.Caching.Memory;
-using RazorPageApp.Services.Interfaces;
 
-namespace RazorPageApp.Services
+namespace Code.Services
 {    
+    public interface ICacheHelper
+    {
+        T GetAndCache<T>(string cacheKey, Func<T> func, TimeSpan slidingExpiration, TimeSpan absoluteExpiration);
+    }
+
     public class CacheHelper : ICacheHelper
     {
         private readonly IMemoryCache _cache;

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPageApp.Models;
-using RazorPageApp.Services.Interfaces;
+using Code.Models;
+using Code.Services;
 
-namespace RazorPageApp.Pages
+namespace Code.Pages
 {
     public class IndexModel : PageModel
     {

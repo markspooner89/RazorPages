@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
-using RazorPageApp.Models;
-using RazorPageApp.Repositories.Interfaces;
-using RazorPageApp.Services.Interfaces;
+using Code.Models;
+using Code.Data;
 
-namespace RazorPageApp.Services
+namespace Code.Services
 {
+    public interface IGradeService
+    {
+        IEnumerable<Grade> GetGrades();
+        Grade GetGrade(int id);
+    }
+
     public class GradeService : IGradeService
     {
         private readonly ICacheHelper _helper;
@@ -24,6 +29,11 @@ namespace RazorPageApp.Services
                 func: () => _repository.GetGrades(), 
                 slidingExpiration: TimeSpan.FromMinutes(1), 
                 absoluteExpiration: TimeSpan.FromMinutes(60));
+        }
+
+        public Grade GetGrade(int id)
+        {
+            return _repository.GetGrade(id);
         }
     } 
 }
