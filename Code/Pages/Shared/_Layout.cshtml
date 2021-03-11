@@ -5,20 +5,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/site.min.css" />
+    <link rel="stylesheet" href="~/dist/site.min.css" />
 </head>
 
 <body>
+
     <header>
-        <h1>App!</h1>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">Navbar</a>
+        </nav>
     </header>
-    <main>
+    <main class="container-fluid">
         @RenderBody()
     </main>
     <footer>
         <h6>Footer</h6>
     </footer>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/dist/site.min.js" asp-append-version="true"></script>
     @RenderSection("scripts", false)
 </body>
 
