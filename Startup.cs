@@ -18,8 +18,10 @@ namespace Code
 
             services.AddScoped<IJsonFileHelper, JsonFileHelper>();
             services.AddScoped<IGradeRepository, GradeRepository>();
+            services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped<ICacheHelper, CacheHelper>();
             services.AddScoped<IGradeService, GradeService>();
+            services.AddScoped<IArticleService, ArtliceService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

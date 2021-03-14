@@ -1,26 +1,23 @@
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Code.Models;
 using Code.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Code.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IGradeService _service;
+        private readonly IArticleService _service;
 
-        public IndexModel(IGradeService service)
+        public IndexModel(IArticleService service)
         {
             _service = service;
         }
         
-        [BindProperty]
-        public IEnumerable<Grade> Grades { get; set; }
+        public Article LatestArticle { get; set; }
 
         public void OnGet()
         {
-            Grades = _service.GetGrades();
+            LatestArticle = _service.GetLatestArticle();
         }
     }
 }
