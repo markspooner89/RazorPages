@@ -1,24 +1,24 @@
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Code.Models;
 using Code.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Code.Pages
 {
     public class GradesModel : PageModel
     {
-        private readonly IGradeService _service;
+        private readonly IGradeService _gradeService;
 
-        public GradesModel(IGradeService service)
+        public GradesModel(IGradeService gradeService)
         {
-            _service = service;
+            _gradeService = gradeService;
         }
-        
-        public IEnumerable<Grade> Grades { get; set; }
 
+        public IEnumerable<Grade> Grades { get; set; }
+        
         public void OnGet()
         {
-            Grades = _service.GetGrades();
+            Grades = _gradeService.GetGrades();
         }
     }
 }

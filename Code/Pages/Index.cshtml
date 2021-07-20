@@ -1,19 +1,24 @@
 @page
 @model Code.Pages.IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Home";
 }
-@section Scripts  { 
-    <script>
-        console.log("Index Page");
-    </script>
+@section Scripts {
+<script>
+    console.log("Home Page");
+</script>
 }
-
-<h2>Index</h2>
-
-@if(Model.LatestArticle != null)
-{
-    <h4>@Model.LatestArticle.Title</h4>
-    <p>@Model.LatestArticle.Body</p>
-}
-
+<h2>Home</h2>
+<form method="post">
+    <div><label>Message:</label></div>
+    <div><textarea asp-for="Message"></textarea></div>
+    @if (!Model.IsMessageValid)
+    {
+        <p>Invalid Message!</p>
+    }
+    <button type="submit">Submit</button>
+    @if (Model.ShowMessageSubmitted)
+    {
+        <p>Message Submitted!</p>
+    }
+</form>

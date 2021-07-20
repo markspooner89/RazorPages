@@ -17,11 +17,10 @@ namespace Code
             });
 
             services.AddScoped<IJsonFileHelper, JsonFileHelper>();
+            services.AddScoped<ICacheHelper, CacheHelper>();  
+
             services.AddScoped<IGradeRepository, GradeRepository>();
-            services.AddScoped<IArticleRepository, ArticleRepository>();
-            services.AddScoped<ICacheHelper, CacheHelper>();
             services.AddScoped<IGradeService, GradeService>();
-            services.AddScoped<IArticleService, ArtliceService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -35,6 +34,9 @@ namespace Code
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            app.UseStatusCodePagesWithRedirects("/NotFound"); //CHANGES URL
+            //app.UseStatusCodePagesWithReExecute("/NotFound"); //KEEPS URL
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

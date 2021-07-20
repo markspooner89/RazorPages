@@ -2,36 +2,26 @@
     {   
         "id": 1,
         "name": "10th Kup",
-        "altName": "White Belt",
-        "primaryColor": "#ffffff",
-        "secondaryColor": "#ffffff"
+        "altName": "White Belt"
     },
     {   
         "id": 2,
         "name": "9th Kup",
-        "altName": "Yellow Tag",
-        "primaryColor": "#ffffff",
-        "secondaryColor": "#f6e58d"
+        "altName": "Yellow Tag"
     },
     {   
         "id": 3,
         "name": "8th Kup",
-        "altName": "Yellow Belt",
-        "primaryColor": "#f6e58d",
-        "secondaryColor": "#f6e58d"
+        "altName": "Yellow Belt"
     },
     {   
         "id": 4,
         "name": "7th Kup",
-        "altName": "Green Tag",
-        "primaryColor": "#f6e58d",
-        "secondaryColor": "#6ab04c"
+        "altName": "Green Tag"
     },
     {   
         "id": 5,
         "name": "6th Kup",
-        "altName": "Green Belt",
-        "primaryColor": "#6ab04c",
-        "secondaryColor": "#6ab04c"
+        "altName": "Green Belt"
     }
 ]

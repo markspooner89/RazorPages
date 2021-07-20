@@ -1,23 +1,36 @@
-using Code.Models;
-using Code.Services;
+using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Code.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IArticleService _service;
+        [BindProperty]
+        public string Message { get; set; }
 
-        public IndexModel(IArticleService service)
-        {
-            _service = service;
-        }
-        
-        public Article LatestArticle { get; set; }
+        [BindProperty]
+        public bool IsMessageValid { get; set; }
+
+        [TempData]
+        public bool ShowMessageSubmitted { get; set; }
 
         public void OnGet()
         {
-            LatestArticle = _service.GetLatestArticle();
+            Message = String.Empty;
+            IsMessageValid = true;
+        }
+
+        public IActionResult OnPost()
+        {
+            if (string.IsNullOrWhiteSpace(Message))
+            {
+                IsMessageValid = false;
+                return Page();
+            }
+
+            ShowMessageSubmitted = true;
+            return RedirectToPage();
         }
     }
 }

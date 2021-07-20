@@ -3,25 +3,23 @@
 @{
     ViewData["Title"] = "Grades";
 }
-@section Scripts  { 
-    <script>
-        console.log("Grades Page");
-    </script>
+@section Scripts {
+<script>
+    console.log("Grades Page");
+</script>
 }
 
 <h2>Grades</h2>
 
-@if(Model.Grades != null && Model.Grades.Count() > 0)
+@if (Model.Grades != null && Model.Grades.Count() > 0)
 {
     @foreach (var grade in Model.Grades)
     {
-        <h5>@grade.Name</h5>
-        <h6>@grade.AltName</h6>
-        <div class="belt">
-            <div class="belt-section-upper" style="background-color: @grade.PrimaryColor"></div>
-            <div class="belt-section-inner" style="background-color: @grade.SecondaryColor"></div>
-            <div class="belt-section-lower" style="background-color: @grade.PrimaryColor"></div>
-        </div>
-        <a asp-page="Grade" asp-route-id="@grade.Id">View</a>
+        <p>@grade.Name</p>
     }
 }
+else
+{
+    <p>No grades could be found!</p>
+}
+

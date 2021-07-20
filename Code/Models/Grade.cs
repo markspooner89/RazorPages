@@ -6,7 +6,5 @@ namespace Code.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string AltName { get; set; }
-        public string PrimaryColor { get; set; }
-        public string SecondaryColor { get; set; }
     }
 }
