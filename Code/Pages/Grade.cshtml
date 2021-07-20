@@ -1,0 +1,14 @@
+@page
+@model Code.Pages.GradeModel
+@{
+    ViewData["Title"] = "Grade";
+}
+@section Scripts {
+<script>
+    console.log("Grade Page");
+</script>
+}
+
+<h2>Grade</h2>
+<h5>@Model.Id</h5>
+<p><a asp-page="Grades">Back to Grades</a></p>

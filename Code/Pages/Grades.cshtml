@@ -15,7 +15,7 @@
 {
     @foreach (var grade in Model.Grades)
     {
-        <p>@grade.Name</p>
+        <p><a asp-page="Grade" asp-route-id="@grade.Id">@grade.Name</a></p>
     }
 }
 else
