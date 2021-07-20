@@ -9,7 +9,6 @@ namespace Code.Pages
         [BindProperty]
         public string Message { get; set; }
 
-        [BindProperty]
         public bool IsMessageValid { get; set; }
 
         [TempData]

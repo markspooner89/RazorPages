@@ -31,12 +31,11 @@ namespace Code
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Errors/500");
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithRedirects("/NotFound"); //CHANGES URL
-            //app.UseStatusCodePagesWithReExecute("/NotFound"); //KEEPS URL
+            app.UseStatusCodePagesWithReExecute("/Errors/{0}");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
