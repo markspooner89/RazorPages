@@ -11,26 +11,14 @@
 
 <h2>Grades</h2>
 
-<form method="post">
-    @foreach (var grade in Model.Grades)
+@if(Model.Grades != null && Model.Grades.Count() > 0)
+{
+    foreach (var grade in Model.Grades)
     {
-        <input name="Grades.Index" value="@grade.Id" type="hidden" />
-        <input name="Grades[@grade.Id].Id" value="@grade.Id" type="hidden" />
-        <input name="Grades[@grade.Id].Name" value="@grade.Name" type="hidden"  />
-        <input name="Grades[@grade.Id].AltName" value="@grade.AltName" type="hidden" />
-        <p>
-            <a asp-page="Grade" asp-route-id="@grade.Id">
-                @if (Model.ShowKorean)
-                {
-                    <span>@grade.Name</span>
-                }
-                else
-                {
-                    <span>@grade.AltName</span>
-                }
-            </a>
-        </p>
+        <p><a asp-page="Grade" asp-route-id="@grade.Id">@grade.Name</a></p>
     }
-    <input name="ShowKorean" value="@Model.ShowKorean.ToString()" type="hidden" />
-    <button type="submit">Toggle</button>
-</form>
+}
+else
+{
+    <p>No grades found!</p>
+}

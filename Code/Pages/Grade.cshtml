@@ -9,6 +9,16 @@
 </script>
 }
 
-<h2>Grade</h2>
-<h5>@Model.Id</h5>
-<p><a asp-page="Grades">Back to Grades</a></p>
+@if(Model.Grade != null)
+{
+    <h2>@Model.Grade.Name</h2>
+    <h5>@Model.Grade.AltName</h5>
+    <p><a asp-page="Grades">Back to Grades</a></p>
+}
+else
+{
+    <h2>Not Found!</h2>
+    <p>The grade you where looking for could not be found.</p>
+    <p><a asp-page="Grades">Back to Grades</a></p>
+}
+

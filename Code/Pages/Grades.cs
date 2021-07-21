@@ -16,22 +16,11 @@ namespace Code.Pages
             _gradeService = gradeService;
         }
 
-        [BindProperty]
-        public bool ShowKorean { get; set; }
-
-        [BindProperty]
         public IEnumerable<Grade> Grades { get; set; }
         
         public void OnGet()
         {
-            ShowKorean = true;
             Grades = _gradeService.GetGrades();
-        }
-
-        public void OnPost()
-        {
-            var postedShowKorean = Convert.ToBoolean(Request.Form["ShowKorean"]);
-            this.ShowKorean = !postedShowKorean;
         }
     }
 }
