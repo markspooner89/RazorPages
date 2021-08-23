@@ -8,17 +8,30 @@
     console.log("Home Page");
 </script>
 }
+
 <h2>Home</h2>
-<form method="post">
-    <div><label>Message:</label></div>
-    <div><textarea asp-for="Message"></textarea></div>
-    @if (!Model.IsMessageValid)
+
+@foreach (var grade in Model.Grades)
+{
+    <h2>@grade.Name.English</h2>
+    <h3>@grade.Name.Korean</h3>
+
+    @if (grade.Patterns != null)
     {
-        <p>Invalid Message!</p>
+        @foreach (var pattern in grade.Patterns)
+        {
+            <h4>@pattern.Name.English</h4>
+            <h5>@pattern.Name.Korean</h5>
+            <h6>@pattern.MoveCount</h6>
+        }
     }
-    <button type="submit">Submit</button>
-    @if (Model.ShowMessageSubmitted)
+
+    @if (grade.Techniques != null)
     {
-        <p>Message Submitted!</p>
+        @foreach (var technique in @grade.Techniques)
+        {
+            <h4>@technique.Name.English</h4>
+            <h5>@technique.Name.Korean</h5>
+        }
     }
-</form>
+}

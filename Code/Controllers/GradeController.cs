@@ -19,5 +19,12 @@ namespace Code.Controllers
             var grades = _gradeService.GetGrades();
             return Ok(grades);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var grade = _gradeService.GetGrade(id);
+            return Ok(grade);
+        }
     }
 }

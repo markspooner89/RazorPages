@@ -1,27 +1,102 @@
 [
-    {   
+    {
         "id": 1,
-        "name": "10th Kup",
-        "altName": "White Belt"
+        "name": {
+            "english": "White Belt",
+            "korean": "10th Kup"
+        },
+        "techniques": [
+            {
+                "name": {
+                    "english": "Front Kick",
+                    "korean": "Ap Chagi"
+                }
+            },
+            {
+                "name": {
+                    "english": "Turning Kick",
+                    "korean": "Dollyo Chagi"
+                }
+            }
+        ]
     },
-    {   
+    {
         "id": 2,
-        "name": "9th Kup",
-        "altName": "Yellow Tag"
+        "name": {
+            "english": "Yellow Tag",
+            "korean": "9th Kup"
+        },
+        "patterns": [
+            {
+                "name": {
+                    "english": "Pattern 1",
+                    "korean": "Il Jang"
+                },
+                "moveCount": 18
+            }
+        ],
+        "techniques": [
+            {
+                "name": {
+                    "english": "Front Kick",
+                    "korean": "Ap Chagi"
+                }
+            },
+            {
+                "name": {
+                    "english": "Turning Kick",
+                    "korean": "Dollyo Chagi"
+                }
+            },
+            {
+                "name": {
+                    "english": "Axe Kick",
+                    "korean": "Naeryo Chagi"
+                }
+            }
+        ]
     },
-    {   
+    {
         "id": 3,
-        "name": "8th Kup",
-        "altName": "Yellow Belt"
-    },
-    {   
-        "id": 4,
-        "name": "7th Kup",
-        "altName": "Green Tag"
-    },
-    {   
-        "id": 5,
-        "name": "6th Kup",
-        "altName": "Green Belt"
+        "name": {
+            "english": "Yellow Belt",
+            "korean": "8th Kup"
+        },
+        "patterns": [
+            {
+                "name": {
+                    "english": "Pattern 1",
+                    "korean": "Il Jang"
+                },
+                "moveCount": 18
+            },
+            {
+                "name": {
+                    "english": "Pattern 2",
+                    "korean": "Ee Jang"
+                },
+                "moveCount": 18
+            }
+        ],
+        "techniques": [
+            {
+                "name": {
+                    "english": "Front Kick",
+                    "korean": "Ap Chagi"
+                }
+            },
+            {
+                "name": {
+                    "english": "Turning Kick",
+                    "korean": "Dollyo Chagi"
+                }
+            },
+            {
+                "name": {
+                    "english": "Axe Kick",
+                    "korean": "Naeryo Chagi"
+                }
+            }
+        ]
     }
 ]

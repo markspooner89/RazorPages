@@ -1,35 +1,24 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Code.Models;
+using Code.Services;
 
 namespace Code.Pages
 {
     public class IndexModel : PageModel
     {
-        [BindProperty]
-        public string Message { get; set; }
+        private readonly IGradeService _service;
 
-        public bool IsMessageValid { get; set; }
+        public IndexModel(IGradeService service)
+        {
+            _service = service;
+        }
 
-        [TempData]
-        public bool ShowMessageSubmitted { get; set; }
+        public IEnumerable<Grade> Grades { get; set; }
 
         public void OnGet()
         {
-            Message = String.Empty;
-            IsMessageValid = true;
-        }
-
-        public IActionResult OnPost()
-        {
-            if (string.IsNullOrWhiteSpace(Message))
-            {
-                IsMessageValid = false;
-                return Page();
-            }
-
-            ShowMessageSubmitted = true;
-            return RedirectToPage();
+            Grades = _service.GetGrades();
         }
     }
 }
